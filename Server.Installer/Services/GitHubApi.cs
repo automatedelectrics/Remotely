@@ -138,7 +138,7 @@ namespace Server.Installer.Services
                     cliParams);
 
                 var rid = EnvironmentHelper.IsLinux ?
-                    "linux-x64" :
+                    "linux-arm64" :
                     "win-x64";
 
                 var body = new
