@@ -162,8 +162,13 @@ namespace Server.Installer.Services
             }
             else
             {
-                Process.Start("sudo", $"chmod +x {filePath}").WaitForExit();
-                psi = new ProcessStartInfo("sudo")
+                // Method for direct install (on Linux host)...
+				//Process.Start("sudo", $"chmod +x {filePath}").WaitForExit();
+				//psi = new ProcessStartInfo("sudo")
+				
+				// Method for command line install from within a Docker container (not required for Dockerfile install)..
+				//Process.Start("/bin/bash", $"chmod +x {filePath}").WaitForExit();
+				psi = new ProcessStartInfo("/bin/bash")
                 {
                     Arguments = $"\"{filePath}\" --host {cliParams.ServerUrl.Authority} --approot {cliParams.InstallDirectory}",
                     WorkingDirectory = cliParams.InstallDirectory
