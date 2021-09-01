@@ -24,6 +24,11 @@ namespace Server.Installer
             Console.WriteLine("(https://remotely.one)");
             Console.WriteLine();
             Console.WriteLine();
+            Console.WriteLine("Automated Electrics' Customised Installer");
+            Console.WriteLine("for Linux-ARM64 Docker Container");
+            Console.WriteLine("Version: 1.1");
+            Console.WriteLine();
+            Console.WriteLine();
 
 
             if (!ParseCliParams(args, out var cliParams))
